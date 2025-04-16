@@ -2351,8 +2351,3 @@ input[type="password"]::-ms-reveal {
 input[type="password"]::-ms-clear {
     display: none;
 }
-
-.lazyAfter,
-.lazyBefore {
-    display: none !important;
-}
