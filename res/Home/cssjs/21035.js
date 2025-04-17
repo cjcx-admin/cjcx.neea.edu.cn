@@ -1482,7 +1482,7 @@ serv.pdfData = function (par) {
             "XX": "贵州师范大学",
             "SCO_LC": "120",
             "KY_SCO": "--",
-            "_QR": "https://ecert.neea.edu.cn/verify.htm?Mo7irj64ypS0FO7mw4VovRz4EF5_kPa_hc6jD6ncd-qcp7nsrYPc1FWiSlde6BGBetQDGafFMscNNvz3slMG7lz53TTTyfQihpbZolfAEV3HWXq-gXmP1AojR2aBDxLAWM6A7ftkYEMRZfP5hFBaQGg1uLWV_97s4uZ2fWMwbARE7D_L-KmlIjzzEoiNlQzFMp2ZJA7bHYVBT5R-LaYztQmbqNMM6Na_9HjJcQoA2XkAUx1b345JuoFZ_WJSukUKo91Cjs0OlLeTsOavRgMsMDzvJUwTZ2-sxz-VXWTeuDw=",
+            "_QR": "./QR.png",
             "SCORE": "381",
             "SCO_RD": "126",
             "SFZ": "52240120000908705X",
@@ -2003,51 +2003,55 @@ serv.pdf = function (par, ret) {
         //   "<img src='../../../cjcx.neea.edu.cn/html1/folder/photo.jpg' onerror=onerror=null;src='/query/images/nophoto.jpg'>";
       } else if (d.NAME == "_QR") {
         //二维码
-        if (v) {
-          if (v.indexOf("://") == -1)
-            v = "https://ecert.neea.edu.cn/verify.htm?" + v;
+          v =
+          "<img src='./QR.png' width='90' height='90'>";
+        $("#_QR").appendTo(v)
+        // if (v) {
+        //   if (v.indexOf("://") == -1)
+        //     v = "https://ecert.neea.edu.cn/verify.htm?" + v;
 
-          var len = 368; //版本:13
-          var ratio =
-            window.devicePixelRatio || screen.deviceXDPI / screen.logicalXDPI;
-          if (dev.mobile) {
-            ratio = Math.ceil(ratio) / ratio; //微信:2.700000047683716, 小米:2.75
-            if (ratio > 1) len = 272;
-          } else {
-            ratio *= scale;
+        //   var len = 368; //版本:13
+        //   var ratio =
+        //     window.devicePixelRatio || screen.deviceXDPI / screen.logicalXDPI;
+        //   if (dev.mobile) {
+        //     ratio = Math.ceil(ratio) / ratio; //微信:2.700000047683716, 小米:2.75
+        //     if (ratio > 1) len = 272;
+        //   } else {
+        //     ratio *= scale;
 
-            while (ratio >= 2) ratio -= 1;
-            /*
-                                    if (ratio >= 1.75) len = 1274;
-                                    else if (ratio >= 1.3 * 1.25) len = 1004;
-                                    else if (ratio >= 1.5) len = 930;
-                                    else if (ratio >= 1.3) len = 645;//719
-                                    else if (ratio >= 1.25) len = 587;//645
-                                    else if(ratio>1)len=459;
-                                    */
-            var VER = [
-              0, 18, 33, 54, 79, 107, 135, 155, 193, 231, 272, 322, 368, 426,
-              459, 521, 587, 645, 719, 793, 859, 930, 1004, 1092, 1172, 1274,
-              1368, 1466, 1529, 1629, 1733,
-            ];
-            len = VER[Math.round(((70.866 - 21) * ratio) / 4)] || len;
-            //console.log("ratio:"+ratio+", 实际:"+v.length+", 缩放后:"+len);
+        //     while (ratio >= 2) ratio -= 1;
+        //     /*
+        //                             if (ratio >= 1.75) len = 1274;
+        //                             else if (ratio >= 1.3 * 1.25) len = 1004;
+        //                             else if (ratio >= 1.5) len = 930;
+        //                             else if (ratio >= 1.3) len = 645;//719
+        //                             else if (ratio >= 1.25) len = 587;//645
+        //                             else if(ratio>1)len=459;
+        //                             */
+        //     var VER = [
+        //       0, 18, 33, 54, 79, 107, 135, 155, 193, 231, 272, 322, 368, 426,
+        //       459, 521, 587, 645, 719, 793, 859, 930, 1004, 1092, 1172, 1274,
+        //       1368, 1466, 1529, 1629, 1733,
+        //     ];
+        //     len = VER[Math.round(((70.866 - 21) * ratio) / 4)] || len;
+        //     //console.log("ratio:"+ratio+", 实际:"+v.length+", 缩放后:"+len);
 
-            //右对齐
-            if (/NIT_SINGLE|NIT_ADVANCED/.test(par.subject))
-              htm.push("left:" + (x - 130 + 3 + d.WIDTH) + "px;");
-            htm.push("width:130px;height:" + d.HEIGHT * scale + "px;");
-          }
-          for (var j = v.length; j < len; j++) v += " ";
-          v = new AraleQRCode({
-            render: "table",
-            text: v,
-            correctLevel: 0,
-            size: 250,
-          }).outerHTML;
-        } else {
-          htm.push("display:none;");
-        }
+        //     //右对齐
+        //     if (/NIT_SINGLE|NIT_ADVANCED/.test(par.subject))
+        //       htm.push("left:" + (x - 130 + 3 + d.WIDTH) + "px;");
+        //     htm.push("width:130px;height:" + d.HEIGHT * scale + "px;");
+        //   }
+        //   for (var j = v.length ; j < len; j++) v += " ";
+        // //   v = new AraleQRCode({
+        // //     render: "table",
+        // //     text: v,
+        // //     correctLevel: 0,
+        // //     size: 250,
+        // //   }).outerHTML;
+        // //   htm.push("<img src='./QR.png' />");
+        // } else {
+        //   htm.push("display:none;");
+        // }
       } else {
         if (d.NAME == "BKJB" || d.NAME == "TESTTYPE" || d.NAME == "JB") {
           //报考级别,PETS||WSK||NCRE
