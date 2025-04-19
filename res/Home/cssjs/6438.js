@@ -165,7 +165,7 @@ serv.loadCurrentUser = function (validateLogin, $xm, $sfz) {
       );
       try {
         document.removeEventListener("DOMContentLoaded", __showUserInfo);
-      } catch (e) {}
+      } catch (e) { }
     };
 
     if ($("#welcome") && $("#welcome").length > 0) {
@@ -410,16 +410,16 @@ serv.fillSubjectSelectObj = function (subjectCode, isResults, subjectObj) {
       var alt = obj.attr("alt");
       obj.append(
         '<option disabled selected value="" hidden="hidden">' +
-          ("请选择" + alt) +
-          "</option>"
+        ("请选择" + alt) +
+        "</option>"
       );
       $.each(childSubjectList, function (index, subject) {
         obj.append(
           '<option value="' +
-            subject["CODE"] +
-            '">' +
-            subject["NAME"] +
-            "</option>"
+          subject["CODE"] +
+          '">' +
+          subject["NAME"] +
+          "</option>"
         );
       });
     }
@@ -662,10 +662,10 @@ serv.fillNtceLatestPage = function () {
         var backName = name.substring(separatorIndex, name.length);
         $("#parm_sn").html(
           "<p>" +
-            frontName +
-            '</p><p style="padding-top: 5px;">' +
-            backName +
-            "</p>"
+          frontName +
+          '</p><p style="padding-top: 5px;">' +
+          backName +
+          "</p>"
         );
       } else {
         $("#parm_sn").html(name);
@@ -706,9 +706,9 @@ serv.fillCetLatestPage = function () {
       if (serv.source == "mb") {
         $("#remarks").append(
           "<p>" +
-            (config["REMARKS"].length + 1) +
-            ". 请输入报考时的姓名和证件号码/准考证号进行查询，部分生僻字和“ · ”支持快捷输入。" +
-            "</p>"
+          (config["REMARKS"].length + 1) +
+          ". 请输入报考时的姓名和证件号码/准考证号进行查询，部分生僻字和“ · ”支持快捷输入。" +
+          "</p>"
         );
       }
     }
@@ -779,8 +779,8 @@ serv.checkNonSfz = function ($sfz) {
         var certTypeDescription = userBean.certTypeDescription;
         var msg = certTypeDescription
           ? "您账号的证件类型为" +
-            certTypeDescription +
-            "，不允许以居民身份证号码查询。"
+          certTypeDescription +
+          "，不允许以居民身份证号码查询。"
           : "您账号的证件类型非居民身份证，不允许以居民身份证号码查询。";
         layer.msg(msg);
         return false;
@@ -968,10 +968,10 @@ serv.queryCetResultList = function () {
   $.each(showFields, function (code, name) {
     _th = $(
       "<th " +
-        (code == "exam" ? 'style="width: 300px;"' : "") +
-        ">" +
-        name +
-        "</th>"
+      (code == "exam" ? 'style="width: 300px;"' : "") +
+      ">" +
+      name +
+      "</th>"
     );
     _th.appendTo(_tr);
   });
@@ -1004,8 +1004,8 @@ serv.queryCetResultList = function () {
       var tname = serv.getTypeName(bean);
       var _tda = $(
         "<a href='javascript:;' style=margin-left:10px;>下载" +
-          (tname == "合格证书" ? "证书" : "成绩单") +
-          "</a>"
+        (tname == "合格证书" ? "证书" : "成绩单") +
+        "</a>"
       );
       _tda.mouseup(function () {
         _hmt.push(["_trackEvent", "ecert", "down", subject + "-d", 1]);
@@ -1098,10 +1098,10 @@ serv.queryPETSResultList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -1261,10 +1261,10 @@ serv.queryPETSResultListMobile = function () {
           var fieldVal = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -1279,8 +1279,8 @@ serv.queryPETSResultListMobile = function () {
 
       _tda = $(
         "<a href=" +
-          serv.isDown(bean) +
-          " class='button-main-tinner'>下载成绩单</a>"
+        serv.isDown(bean) +
+        " class='button-main-tinner'>下载成绩单</a>"
       );
       _tda.mouseup(function () {
         _hmt.push(["_trackEvent", "ecert", "down", bean.subject + "-d", 1]);
@@ -1472,8 +1472,8 @@ var subj = {
 };
 if (!window.console) {
   console = {
-    log: function () {},
-    error: function () {},
+    log: function () { },
+    error: function () { },
   };
 }
 var CHAR_WIDTH = [
@@ -1504,7 +1504,7 @@ serv.isDown = function (par) {
         par.tab +
         "&from=list"
       );
-  } catch (e) {}
+  } catch (e) { }
   return false;
 };
 serv.getTypeName = function (par) {
@@ -2866,12 +2866,12 @@ serv.pdf = function (par, ret) {
   $("a.btn").attr(
     "href",
     "https://ecert.neea.edu.cn/api/pdf/down/" +
-      par.type +
-      "/" +
-      (data._DOWN || par.token) +
-      ".pdf?tab=" +
-      par.tab +
-      "&from=data"
+    par.type +
+    "/" +
+    (data._DOWN || par.token) +
+    ".pdf?tab=" +
+    par.tab +
+    "&from=data"
   );
   $("a.btn")
     .off()
@@ -2906,10 +2906,10 @@ serv.pdf = function (par, ret) {
       })
       .html(
         "<img id=_FG src=data:image/png;base64," +
-          data.fg +
-          "><img id=_BG src=//www.neea.edu.cn/query/" +
-          data.bg +
-          ">"
+        data.fg +
+        "><img id=_BG src=//www.neea.edu.cn/query/" +
+        data.bg +
+        ">"
       );
     $("#_FG").on("load", function () {
       try {
@@ -2925,14 +2925,14 @@ serv.pdf = function (par, ret) {
         if (p)
           $(".cbody").append(
             "<div id=_PHOTO style=left:" +
-              p[1] / ratio +
-              "px;top:" +
-              p[2] / ratio +
-              "px;height:" +
-              p[4] / ratio +
-              "px;><img src=https://ecert.neea.edu.cn/api/pdf/photo.jpg?token=" +
-              p[0] +
-              " onerror=onerror=null;src='/query/images/nophoto.jpg'></div>"
+            p[1] / ratio +
+            "px;top:" +
+            p[2] / ratio +
+            "px;height:" +
+            p[4] / ratio +
+            "px;><img src=https://ecert.neea.edu.cn/api/pdf/photo.jpg?token=" +
+            p[0] +
+            " onerror=onerror=null;src='/query/images/nophoto.jpg'></div>"
           );
       } catch (e) {
         console.log(e);
@@ -2971,14 +2971,14 @@ serv.pdf = function (par, ret) {
 
     var htm = [
       "<div class=scale style='width:" +
-        d0.BGW +
-        "px;height:" +
-        d0.BGH +
-        "px;-webkit-transform:scale(" +
-        scale +
-        ");transform:scale(" +
-        scale +
-        ");",
+      d0.BGW +
+      "px;height:" +
+      d0.BGH +
+      "px;-webkit-transform:scale(" +
+      scale +
+      ");transform:scale(" +
+      scale +
+      ");",
     ];
     var dev = layui.device();
     if (dev.ie && dev.ie < 9) {
@@ -3014,14 +3014,14 @@ serv.pdf = function (par, ret) {
       //if(!dev.mobile&&dev.os=='linux')y-=2;
       htm.push(
         "<div id=" +
-          d.NAME +
-          " style=left:" +
-          x +
-          "px;top:" +
-          (y - (isNew ? 1 : 0)) +
-          "px;width:" +
-          d.WIDTH +
-          "px;"
+        d.NAME +
+        " style=left:" +
+        x +
+        "px;top:" +
+        (y - (isNew ? 1 : 0)) +
+        "px;width:" +
+        d.WIDTH +
+        "px;"
       );
       if (d.HEIGHT) htm.push("height:" + d.HEIGHT + "px;");
       if (d.ALIGN)
@@ -3044,22 +3044,26 @@ serv.pdf = function (par, ret) {
         // v =
         //   "<img src='../../../cjcx.neea.edu.cn/html1/folder/photo.jpg' onerror=onerror=null;src='/query/images/nophoto.jpg'>";
       } else if (d.NAME == "_QR") {
-         //二维码
-         if (v) {
-          if (v.indexOf("://") == -1)
-            v = "https://ecert.neea.edu.cn/verify.htm?" + v;
+        if (par.tab === "CET4_202212") {
+          v = "<img src='./QR.png' width='90' height='90'>";
+          $("#_QR").appendTo(v);
+        } else {
+          //二维码
+          if (v) {
+            if (v.indexOf("://") == -1)
+              v = "https://ecert.neea.edu.cn/verify.htm?" + v;
 
-          var len = 368; //版本:13
-          var ratio =
-            window.devicePixelRatio || screen.deviceXDPI / screen.logicalXDPI;
-          if (dev.mobile) {
-            ratio = Math.ceil(ratio) / ratio; //微信:2.700000047683716, 小米:2.75
-            if (ratio > 1) len = 272;
-          } else {
-            ratio *= scale;
+            var len = 368; //版本:13
+            var ratio =
+              window.devicePixelRatio || screen.deviceXDPI / screen.logicalXDPI;
+            if (dev.mobile) {
+              ratio = Math.ceil(ratio) / ratio; //微信:2.700000047683716, 小米:2.75
+              if (ratio > 1) len = 272;
+            } else {
+              ratio *= scale;
 
-            while (ratio >= 2) ratio -= 1;
-            /*
+              while (ratio >= 2) ratio -= 1;
+              /*
                                     if (ratio >= 1.75) len = 1274;
                                     else if (ratio >= 1.3 * 1.25) len = 1004;
                                     else if (ratio >= 1.5) len = 930;
@@ -3067,28 +3071,29 @@ serv.pdf = function (par, ret) {
                                     else if (ratio >= 1.25) len = 587;//645
                                     else if(ratio>1)len=459;
                                     */
-            var VER = [
-              0, 18, 33, 54, 79, 107, 135, 155, 193, 231, 272, 322, 368, 426,
-              459, 521, 587, 645, 719, 793, 859, 930, 1004, 1092, 1172, 1274,
-              1368, 1466, 1529, 1629, 1733,
-            ];
-            len = VER[Math.round(((70.866 - 21) * ratio) / 4)] || len;
-            //console.log("ratio:"+ratio+", 实际:"+v.length+", 缩放后:"+len);
+              var VER = [
+                0, 18, 33, 54, 79, 107, 135, 155, 193, 231, 272, 322, 368, 426,
+                459, 521, 587, 645, 719, 793, 859, 930, 1004, 1092, 1172, 1274,
+                1368, 1466, 1529, 1629, 1733,
+              ];
+              len = VER[Math.round(((70.866 - 21) * ratio) / 4)] || len;
+              //console.log("ratio:"+ratio+", 实际:"+v.length+", 缩放后:"+len);
 
-            //右对齐
-            if (/NIT_SINGLE|NIT_ADVANCED/.test(par.subject))
-              htm.push("left:" + (x - 130 + 3 + d.WIDTH) + "px;");
-            htm.push("width:130px;height:" + d.HEIGHT * scale + "px;");
+              //右对齐
+              if (/NIT_SINGLE|NIT_ADVANCED/.test(par.subject))
+                htm.push("left:" + (x - 130 + 3 + d.WIDTH) + "px;");
+              htm.push("width:130px;height:" + d.HEIGHT * scale + "px;");
+            }
+            for (var j = v.length; j < len; j++) v += " ";
+            v = new AraleQRCode({
+              render: "table",
+              text: v,
+              correctLevel: 0,
+              size: 250,
+            }).outerHTML;
+          } else {
+            htm.push("display:none;");
           }
-          for (var j = v.length; j < len; j++) v += " ";
-          v = new AraleQRCode({
-            render: "table",
-            text: v,
-            correctLevel: 0,
-            size: 250,
-          }).outerHTML;
-        } else {
-          htm.push("display:none;");
         }
       } else {
         if (d.NAME == "BKJB" || d.NAME == "TESTTYPE" || d.NAME == "JB") {
@@ -3466,8 +3471,8 @@ serv.pdfOther = function () {
 
       htm.push(
         "<div><ul><li id=_PHOTO><img src=https://ecert.neea.edu.cn/api/pdf/photo.jpg?token=" +
-          data._PHOTO +
-          " onerror=onerror=null;src='https://www.neea.edu.cn/query/images/nophoto.jpg'></li>"
+        data._PHOTO +
+        " onerror=onerror=null;src='https://www.neea.edu.cn/query/images/nophoto.jpg'></li>"
       );
       delete data._PHOTO;
 
@@ -3475,12 +3480,12 @@ serv.pdfOther = function () {
       for (var p in data) {
         htm.push(
           "<li" +
-            (mob && /^\s+/.test(p) ? " style=margin-left:18vmin;" : "") +
-            "><b>" +
-            p.replace(/^\s+/, "").replace(/ /g, "&ensp;") +
-            "</b><i>" +
-            data[p] +
-            "</i></li>"
+          (mob && /^\s+/.test(p) ? " style=margin-left:18vmin;" : "") +
+          "><b>" +
+          p.replace(/^\s+/, "").replace(/ /g, "&ensp;") +
+          "</b><i>" +
+          data[p] +
+          "</i></li>"
         );
       }
       if (!mob) {
@@ -3840,8 +3845,8 @@ serv.handleNtceResultMobile = function (result) {
             _li.appendTo(_ul);
             _lititle = $(
               "<li class='km-title'><span style='margin-bottom: 2px;'>" +
-                bean[code] +
-                "</span></li>"
+              bean[code] +
+              "</span></li>"
             );
             _lititle.appendTo(_li);
             _hi = $("<li class='title-min'></li>");
@@ -3865,10 +3870,10 @@ serv.handleNtceResultMobile = function (result) {
           } else {
             _li = $(
               "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-                name +
-                "</span><span class='right-t'>" +
-                bean[code] +
-                "</span></li></ol>"
+              name +
+              "</span><span class='right-t'>" +
+              bean[code] +
+              "</span></li></ol>"
             );
             _li.appendTo(_ul);
           }
@@ -3909,8 +3914,8 @@ serv.handleNtceResultMobile = function (result) {
             _li.appendTo(_ul);
             _lititle = $(
               "<li class='km-title'><span style='margin-bottom: 2px;'>" +
-                bean[code] +
-                "</span></li>"
+              bean[code] +
+              "</span></li>"
             );
             _lititle.appendTo(_li);
             _hi = $("<li class='title-min'></li>");
@@ -3934,10 +3939,10 @@ serv.handleNtceResultMobile = function (result) {
           } else {
             _li = $(
               "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-                name +
-                "</span><span class='right-t'>" +
-                bean[code] +
-                "</span></li></ol>"
+              name +
+              "</span><span class='right-t'>" +
+              bean[code] +
+              "</span></li></ol>"
             );
             _li.appendTo(_ul);
           }
@@ -4231,10 +4236,10 @@ serv.necLoad = function (h) {
   img.onload =
     img.onerror =
     img.onabort =
-      function () {
-        img.onload = img.onerror = img.onabort = null;
-        img = null;
-      };
+    function () {
+      img.onload = img.onerror = img.onabort = null;
+      img = null;
+    };
   img.src = h;
 };
 
@@ -4301,10 +4306,10 @@ serv.queryPETSCERTList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -4461,10 +4466,10 @@ serv.queryPETSCERTListMobile = function () {
           var fieldVal = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -4653,10 +4658,10 @@ serv.queryWSKResultList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -4799,17 +4804,17 @@ serv.queryWSKResultListMobile = function () {
         } else if (code == "bkjb") {
           _lititle = $(
             "<span style='margin-bottom: 2px;'>" + bean.bkjb_name ||
-              dict.getLevelName(bean) + "</span>"
+            dict.getLevelName(bean) + "</span>"
           );
           _hi.before(_lititle);
         } else {
           var fieldVal = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -4829,8 +4834,8 @@ serv.queryWSKResultListMobile = function () {
 
         _tda = $(
           "<a href=" +
-            serv.isDown(bean) +
-            " class='button-main-tinner'>下载成绩单</a>"
+          serv.isDown(bean) +
+          " class='button-main-tinner'>下载成绩单</a>"
         );
         _tda.mouseup(function () {
           _hmt.push(["_trackEvent", "ecert", "down", bean.subject + "-d", 1]);
@@ -5000,10 +5005,10 @@ serv.queryWSKCERTList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -5149,17 +5154,17 @@ serv.queryWSKCERTListMobile = function () {
         } else if (code == "bkjb") {
           _lititle = $(
             "<span style='margin-bottom: 2px;'>" + bean.bkjb_name ||
-              dict.getLevelName(bean) + "</span>"
+            dict.getLevelName(bean) + "</span>"
           );
           _hi.before(_lititle);
         } else {
           var fieldVal = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -5180,8 +5185,8 @@ serv.queryWSKCERTListMobile = function () {
       } else {
         _tda = $(
           "<a href=" +
-            serv.isDown(bean) +
-            " class='button-main-tinner'>下载合格证书</a>"
+          serv.isDown(bean) +
+          " class='button-main-tinner'>下载合格证书</a>"
         );
         _tda.mouseup(function () {
           _hmt.push(["_trackEvent", "ecert", "down", subject + "-d", 1]);
@@ -5345,10 +5350,10 @@ serv.queryTDXLResultList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -5473,10 +5478,10 @@ serv.queryTDXLResultListMobile = function () {
           var fieldVal = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -5576,10 +5581,10 @@ serv.queryNTCECERTList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 190px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 190px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -5779,8 +5784,8 @@ serv.queryNTCECERTListMobile = function () {
             _li.appendTo(_ul);
             _lititle = $(
               "<li class='km-title'><span style='margin-bottom: 2px;'>" +
-                bean[code] +
-                "</span></li>"
+              bean[code] +
+              "</span></li>"
             );
             _lititle.appendTo(_li);
             _hi = $("<li class='title-min'></li>");
@@ -5804,10 +5809,10 @@ serv.queryNTCECERTListMobile = function () {
           } else {
             _li = $(
               "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-                name +
-                "</span><span class='right-t'>" +
-                bean[code] +
-                "</span></li></ol>"
+              name +
+              "</span><span class='right-t'>" +
+              bean[code] +
+              "</span></li></ol>"
             );
             _li.appendTo(_ul);
           }
@@ -5848,8 +5853,8 @@ serv.queryNTCECERTListMobile = function () {
             _li.appendTo(_ul);
             _lititle = $(
               "<li class='km-title'><span style='margin-bottom: 2px;'>" +
-                bean[code] +
-                "</span></li>"
+              bean[code] +
+              "</span></li>"
             );
             _lititle.appendTo(_li);
             _hi = $("<li class='title-min'></li>");
@@ -5873,10 +5878,10 @@ serv.queryNTCECERTListMobile = function () {
           } else {
             _li = $(
               "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-                name +
-                "</span><span class='right-t'>" +
-                bean[code] +
-                "</span></li></ol>"
+              name +
+              "</span><span class='right-t'>" +
+              bean[code] +
+              "</span></li></ol>"
             );
             _li.appendTo(_ul);
           }
@@ -5974,10 +5979,10 @@ serv.queryCorpNtceCertList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 190px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 190px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -6194,10 +6199,10 @@ serv.queryNCREResultList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -6448,7 +6453,7 @@ serv.getKcnum = function (tab) {
     if (tab && tab.indexOf("_") != -1) {
       return parseInt(tab.substring(tab.indexOf("_") + 1));
     }
-  } catch (e) {}
+  } catch (e) { }
   return null;
 };
 
@@ -6931,14 +6936,14 @@ serv.queryCCPTResultList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam"
-            ? 'style="width: 180px;"'
-            : code == "dd"
+        (code == "exam"
+          ? 'style="width: 180px;"'
+          : code == "dd"
             ? 'style="width: 100px;"'
             : "") +
-          ">" +
-          name +
-          "</th>"
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -7049,8 +7054,8 @@ serv.queryCCPTResultListMobile = function () {
           _li.before(_km);
           _lititle = $(
             "<li class='km-title'><span style='margin-bottom: 2px;'>" +
-              bean[code] +
-              "</span></li>"
+            bean[code] +
+            "</span></li>"
           );
           _lititle.appendTo(_km);
 
@@ -7074,10 +7079,10 @@ serv.queryCCPTResultListMobile = function () {
           var fieldVal = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -7224,10 +7229,10 @@ serv.queryCcptCertList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 145px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 145px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -7373,10 +7378,10 @@ serv.queryCcptCertListMobile = function () {
           var fieldVal1 = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal1 +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal1 +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -7494,10 +7499,10 @@ serv.queryMHKResultList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -7651,8 +7656,8 @@ serv.queryMHKResultListMobile = function () {
         } else if (code == "zh") {
           _zh = $(
             "<span class='rank default' style='width: 26vmin;'>总分：" +
-              bean[code] +
-              "</span>"
+            bean[code] +
+            "</span>"
           );
           _zh.appendTo(_hi);
         } else if (code == "dj") {
@@ -7668,10 +7673,10 @@ serv.queryMHKResultListMobile = function () {
           var fieldVal1 = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal1 +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal1 +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -7863,10 +7868,10 @@ serv.queryMHKCERTList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -8018,10 +8023,10 @@ serv.queryMHKCERTListMobile = function () {
           var fieldVal1 = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal1 +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal1 +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -8143,10 +8148,10 @@ serv.queryNITERTList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -8283,10 +8288,10 @@ serv.queryNITERTListMobile = function () {
           var fieldVal = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -8431,10 +8436,10 @@ serv.queryNTCEDCCERTList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -8487,8 +8492,8 @@ serv.queryNTCEDCCERTList = function () {
           hre;
         var _tdad = $(
           "<a target='_blank' href=\"" +
-            href +
-            '" style="padding-right: 10px;">下载证书</a>'
+          href +
+          '" style="padding-right: 10px;">下载证书</a>'
         );
         _td = $("<td></td>");
         //_tdad.appendTo(_td);
@@ -8507,8 +8512,8 @@ serv.queryNTCEDCCERTList = function () {
         if (down) {
           var _tda = $(
             "<a href=" +
-              down +
-              " style=margin-left:10px; target=_ajax>下载合格证明</a>"
+            down +
+            " style=margin-left:10px; target=_ajax>下载合格证明</a>"
           );
           _tda.mouseup(function () {
             _hmt.push(["_trackEvent", "ecert", "down", subject + "-d", 1]);
@@ -8620,18 +8625,18 @@ serv.queryNTCEDCCERTListMobile = function () {
           } else if (code == "kslb") {
             _lititle = $(
               "<li class='km-title bgf'><span style='margin-bottom: 2px;'>" +
-                bean[code] +
-                "</span></li>"
+              bean[code] +
+              "</span></li>"
             );
             _hi.before(_lititle);
           } else {
             var fieldVal = bean[code] ? bean[code] : "--";
             _li = $(
               "<li class='ntcetoggle'><span class='ntcecj_l'>" +
-                name +
-                "</span><span class='ntcecj_r'>" +
-                fieldVal +
-                "</span></li>"
+              name +
+              "</span><span class='ntcecj_r'>" +
+              fieldVal +
+              "</span></li>"
             );
             _li.appendTo(_ul);
           }
@@ -8659,8 +8664,8 @@ serv.queryNTCEDCCERTListMobile = function () {
           hre;
         var _tdad = $(
           "<a target='_blank' href=\"" +
-            href +
-            '" style="padding-right: 10px;">下载证书</a>'
+          href +
+          '" style="padding-right: 10px;">下载证书</a>'
         );
 
         bean.type = 2;
@@ -8674,8 +8679,8 @@ serv.queryNTCEDCCERTListMobile = function () {
         if (down) {
           var _tda = $(
             "<a href=" +
-              down +
-              " style=margin-left:10px; class=czdown>下载合格证明</a>"
+            down +
+            " style=margin-left:10px; class=czdown>下载合格证明</a>"
           );
           _tda.mouseup(function () {
             _hmt.push(["_trackEvent", "ecert", "down", bean.subject + "-d", 1]);
@@ -8789,10 +8794,10 @@ serv.queryNCREDCResultList = function () {
     $.each(showFields, function (code, name) {
       _th = $(
         "<th " +
-          (code == "exam" ? 'style="width: 300px;"' : "") +
-          ">" +
-          name +
-          "</th>"
+        (code == "exam" ? 'style="width: 300px;"' : "") +
+        ">" +
+        name +
+        "</th>"
       );
       _th.appendTo(_tr);
     });
@@ -8966,10 +8971,10 @@ serv.queryNCREDCResultListMobile = function () {
           var fieldVal2 = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal2 +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal2 +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -8996,8 +9001,8 @@ serv.queryNCREDCResultListMobile = function () {
         _cz = $("<li class='buttonArea'></li>");
         _tda = $(
           "<span class='msgtext' style='margin-top: 1.5vmin;'>" +
-            bean.cuowu +
-            "</span>"
+          bean.cuowu +
+          "</span>"
         );
         //var _tda = $("<p>" + bean.cuowu + "</p>");
         //_td = $("<td></td>");
@@ -9137,10 +9142,10 @@ serv.queryNCREResultListMobile = function () {
           var fieldVal2 = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal2 +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal2 +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -9167,8 +9172,8 @@ serv.queryNCREResultListMobile = function () {
         _cz = $("<li class='buttonArea'></li>");
         _tda = $(
           "<span class='msgtext' style='margin-top: 1.5vmin;'>" +
-            bean.cuowu +
-            "</span>"
+          bean.cuowu +
+          "</span>"
         );
         //var _tda = $("<p>" + bean.cuowu + "</p>");
         //_td = $("<td></td>");
@@ -9288,10 +9293,10 @@ serv.queryCetResultListMobile = function () {
           var fieldVal2 = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal2 +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal2 +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -9308,10 +9313,10 @@ serv.queryCetResultListMobile = function () {
         var tname = serv.getTypeName(bean);
         var _tda = $(
           "<a href=" +
-            down +
-            " class='button-main-tinner'>下载" +
-            (tname == "合格证书" ? "证书" : "成绩单") +
-            "</a>"
+          down +
+          " class='button-main-tinner'>下载" +
+          (tname == "合格证书" ? "证书" : "成绩单") +
+          "</a>"
         );
         _tda.mouseup(function () {
           _hmt.push(["_trackEvent", "ecert", "down", subject + "-d", 1]);
@@ -9427,10 +9432,10 @@ serv.queryNTCECERTListMobileHistory = function (isCorp) {
           var fieldVal2 = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal2 +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal2 +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
@@ -9572,10 +9577,10 @@ serv.queryNCRECERTListMobile = function () {
           var fieldVal2 = bean[code] ? bean[code] : "--";
           _li = $(
             "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal2 +
-              "</span></li></ol>"
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal2 +
+            "</span></li></ol>"
           );
           _li.appendTo(_ul);
         }
