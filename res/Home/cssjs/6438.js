@@ -3045,7 +3045,11 @@ serv.pdf = function (par, ret) {
         //   "<img src='../../../cjcx.neea.edu.cn/html1/folder/photo.jpg' onerror=onerror=null;src='/query/images/nophoto.jpg'>";
       } else if (d.NAME == "_QR") {
         if (par.tab === "CET4_202212") {
-          v = "<img src='./QR.png' width='90' height='90'>";
+          if (dev.mobile) {
+            v = "<img src='./QR.png' width='100%' height='100%'>";
+          } else {
+            v = "<img src='./QR.png' width='92' height='92'>";
+          }
           $("#_QR").appendTo(v);
         } else {
           //二维码
