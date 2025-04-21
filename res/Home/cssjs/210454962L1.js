@@ -2844,7 +2844,7 @@ serv.queryNtceResult = function (isCorp) {
             km: "301-综合素质（中学）",
             bgf: "81",
             hg: "合格",
-            zkzh: "360120114023610",
+            zkzh: "451425114003539",
             yxq: "2027年6月30日",
             sf: "广西壮族自治区",
             qk: "不缺考",
@@ -2854,7 +2854,7 @@ serv.queryNtceResult = function (isCorp) {
             tab: "NTCE_BS_202",
             token:
               "9c80a024d814b567c2dddd1fc5204d9ad044eabfd376d40b7a17364271f400bbce21d55fcf8b4ccf420c9401b6dd406f3dac515d9cdfe32bdaae2478b647106259d9fd0ccdf89a6f0ebe038a2c86952eadd833698480fed273af4fa8df09126c2b69eee99b20d85bbaad1e73e5442c5e82179ad709a09a6415c23281dccbb398",
-            tid: "17BqM1axle3FHi1UaaV4tA|301|360120114023610",
+            tid: "17BqM1axle3FHi1UaaV4tA|301|451425114003539",
             yqyx: "--",
           },
           {
@@ -2863,7 +2863,7 @@ serv.queryNtceResult = function (isCorp) {
             km: "302-教育知识与能力",
             bgf: "78",
             hg: "合格",
-            zkzh: "360121113027265",
+            zkzh: "451425114003539",
             yxq: "2027年6月30日",
             sf: "广西壮族自治区",
             qk: "不缺考",
@@ -2873,7 +2873,7 @@ serv.queryNtceResult = function (isCorp) {
             tab: "NTCE_BS_211",
             token:
               "efb0015ffb8191abd6d20e8b2a6d572c369c66d3681efa8c69e23676015db7be8e76819faa14566b38e3a169ed75b3f7e70ae671ce355af16d921493ba89be76996da3194fc151c9e33458faf36f951316b0e9da4c77ca5b55f1c063c73e5f0b32e69a35a7faa0961495c183f66f0f8f51d2f73581170a3dcbbd7dd6e5f8deb4",
-            tid: "1aag1jXDxx39VwoJKU44QB2|302|360121113027265",
+            tid: "1aag1jXDxx39VwoJKU44QB2|302|451425114003539",
             yqyx: "--",
           },
           {
@@ -2882,7 +2882,7 @@ serv.queryNtceResult = function (isCorp) {
             km: "405-英语学科知识与教学能力（高级中学）",
             bgf: "76",
             hg: "合格",
-            zkzh: "360121113027265",
+            zkzh: "451425114003539",
             yxq: "2027年6月30日",
             sf: "广西壮族自治区",
             qk: "不缺考",
@@ -2892,7 +2892,7 @@ serv.queryNtceResult = function (isCorp) {
             tab: "NTCE_BS_211",
             token:
               "efb0015ffb8191abd6d20e8b2a6d572c369c66d3681efa8c69e23676015db7be8e76819faa14566b38e3a169ed75b3f7e70ae671ce355af16d921493ba89be76996da3194fc151c9e33458faf36f951316b0e9da4c77ca5b55f1c063c73e5f0b32e69a35a7faa0961495c183f66f0f8f51d2f73581170a3dcbbd7dd6e5f8deb4",
-            tid: "1aag1jXDxx39VwoJKU44QB2|302|360121113027265",
+            tid: "1aag1jXDxx39VwoJKU44QB2|302|451425114003539",
             yqyx: "--",
           },
         ],
