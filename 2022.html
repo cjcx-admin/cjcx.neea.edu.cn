@@ -23,8 +23,7 @@
 <script src="./js/Tools.js"></script> -->
   <script src="./js/jquery-3.7.1.min.js"></script>
   <script src="./js/layui.js"></script>
-  <!-- <script src="./js/public.js"></script>
-<script src="./js/Http.js"></script>
+  <!-- <script src="./js/Http.js"></script>
 <script src="./js/login.js"></script>
 <script src="./js/userInfoCheck.js" defer></script>
 <script src="./js/sm2_iam.js" defer></script> -->
@@ -117,19 +116,18 @@
                 <div class="formItem marBottom-small">
                   <div class="comb-inner">
                     <input
-                      type="text"
+                      type="password"
                       class="comb-form fontC inner-left"
                       name="password"
                       placeholder="请输入登录密码"
                       errMsg="登录密码不能为空"
                       autocomplete="off"
                       value=""
-                      type="password"
                     />
                     <div class="comb-errIcon flex-row-nowrap"></div>
                     <div
                       class="fontC inner-right flex-row-nowrap justify-end items-center cusp"
-                      onclick="Public.showPwdEye(1)"
+                      onclick="showPwdEye(1)"
                     >
                       <svg
                         t="1678707488027"
@@ -448,7 +446,7 @@
                     <div class="comb-errIcon flex-row-nowrap"></div>
                     <div
                       class="fontC inner-right flex-row-nowrap justify-end items-center cusp"
-                      onclick="Public.showPwdEye(1)"
+                      onclick="showPwdEye(1)"
                     >
                       <svg
                         t="1678707488027"
@@ -612,6 +610,14 @@
       window.location.href = "./xhtml/folder/2022/653-1.htm";
     } else {
       window.location.href = "./html1/folder/2022/653-1.htm";
+    }
+  }
+
+  function showPwdEye() {
+    if ($('input[name="password"]').attr("type") === "text") {
+      $('input[name="password"]').attr("type", "password");
+    } else {
+      $('input[name="password"]').attr("type", "text");
     }
   }
 </script>

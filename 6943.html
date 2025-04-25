@@ -129,7 +129,7 @@
                     <div class="comb-errIcon flex-row-nowrap"></div>
                     <div
                       class="fontC inner-right flex-row-nowrap justify-end items-center cusp"
-                      onclick="Public.showPwdEye(1)"
+                      onclick="showPwdEye()"
                     >
                       <svg
                         t="1678707488027"
@@ -448,7 +448,7 @@
                     <div class="comb-errIcon flex-row-nowrap"></div>
                     <div
                       class="fontC inner-right flex-row-nowrap justify-end items-center cusp"
-                      onclick="Public.showPwdEye(1)"
+                      onclick="showPwdEye()"
                     >
                       <svg
                         t="1678707488027"
@@ -607,5 +607,12 @@
 <script text="javascript">
   function login() {
     window.location.href = "./html1/folder/6943/653-1.htm";
+  }
+  function showPwdEye() {
+    if ($('input[name="password"]').attr("type") === "text") {
+      $('input[name="password"]').attr("type", "password");
+    } else {
+      $('input[name="password"]').attr("type", "text");
+    }
   }
 </script>
