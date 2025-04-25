@@ -2025,7 +2025,7 @@ serv.pdfData = function (par) {
           _QR: "https://ecert.neea.edu.cn/verify.htm?PimROF6pmttvQQK5ES0OPbFSx2UmNZ3Zvsrro3mBKcOau_GUVtPE3UjXQgsRPdgZC6LUcT8TTlY2Q4fa3tpJcBhK3hXglRysO-3Jm14b_FASg8Zfw13EMTmhW0GSKNVSAcWAq8Lh4pQaw3k7PRReV40e8xxdWMjJYA58trjYOfsDg_EjRSIxQAzt5FYM1bWiajQlo9lBIoEpmxbSHRkiKobPYWpSQK_ZLyUC_1v9rkLEt9D8vDA3B9ztqBkKa4Vxu3vLWBeV8v2Mci8me-nT_BjGahQPHkBzys-rYM-sD8Q=",
           SCORE: "435",
           SCO_RD: "158",
-          SFZ: "341226200109235015",
+          SFZ: "51080220030314411X",
           SCO_WT: "141",
           KY_TIME: "--",
           _TIME: "2024年12月",
