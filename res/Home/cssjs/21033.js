@@ -997,12 +997,10 @@ serv.queryCetResultList = function () {
   }
   //列表查询统计
 
-  // $ajax("post", url, params, true, function(result) {
-  //     layer.close(loadIndex);
-  //     if (!result) {
-  //         layer.msg("获取数据错误！");
-  //         return;
-  //     }
+  if (!result) {
+    layer.msg("您所提供的个人信息有误或成绩不存在，请核实后再进行查询。");
+    return;
+  }
   $(".aclist-tit a").html("");
   var subjectName = $("#subject").find("option:selected").text();
   $("#achievement-sn").html(subjectName);
@@ -1579,7 +1577,6 @@ serv.pdfData = function (par) {
   var loadIndex = layer.load(0, {
     shade: 0.1,
   });
-
   layer.close(loadIndex);
   let ret = null;
   if (par.subject === "CET4") {
@@ -2016,264 +2013,168 @@ serv.pdfData = function (par) {
       };
     }
   } else {
-    if (par.tab === "CET6_202412") {
-      ret = {
+    if (par.tab === "CET6_200712") {
+     ret = {
         data: {
-          XX: "复旦大学",
-          SCO_LC: "196",
-          KY_SCO: "--",
-          _QR: "https://ecert.neea.edu.cn/verify.htm?PimROF6pmttvQQK5ES0OPbFSx2UmNZ3Zvsrro3mBKcOau_GUVtPE3UjXQgsRPdgZC6LUcT8TTlY2Q4fa3tpJcBhK3hXglRysO-3Jm14b_FASg8Zfw13EMTmhW0GSKNVSAcWAq8Lh4pQaw3k7PRReV40e8xxdWMjJYA58trjYOfsDg_EjRSIxQAzt5FYM1bWiajQlo9lBIoEpmxbSHRkiKobPYWpSQK_ZLyUC_1v9rkLEt9D8vDA3B9ztqBkKa4Vxu3vLWBeV8v2Mci8me-nT_BjGahQPHkBzys-rYM-sD8Q=",
-          SCORE: "585",
-          SCO_RD: "218",
-          SFZ: "341226200109235015",
-          SCO_WT: "171",
-          KY_TIME: "--",
-          _TIME: "2022年12月",
-          XM: "赵成跃",
-          ZKZH: "110470222204620",
-          ZSBH: "220711047000350",
-          KY_ZKZ: "--",
-          _CODE: "1MNC TQUZ 3W1S LB41",
+          SCO_LC: "126",
+          SCORE: "473",
+          SCO_RD: "186",
+          KS_SFZ: "142603198710242022",
+          SCO_WT: "82",
+          XM: "张芳",
+          ZKZH: "440050100712327",
+          KS_SSXXMC: "山西师范大学",
           _PHOTO:
-            "5a203963b0c731eb6d25e5a82357faf3b6b0238f52eef39097a6ab901a9e9d6299a2fc42887b052ca76d53da11a31cbdfd58fbcf6bf37e7880ffc39a32c80c0c",
+            "e6eab7595d05dcca83a16a84828afdd37410872d4afc1ab55c9e2340077e2d84e6ad0a54b009b3bee8e6169c05f6aa2151cbf942bbf4a32d1a3b4c80998e1583",
+          _YEAR: "2007",
           _BKJB: "RESULT",
-          YX: "护理学院",
+          ID: "100744005003045",
+          SCO_IT: "79",
+          _MONTH: "12",
         },
         group: [
           {
-            QUERY_DEF_ID: "2m8D0eHm5evHVpIXP4Jxsb",
-            BG: "images/CET_result_CET6_202306.jpg",
-            BGW: 397,
-            BGH: 575,
+            QUERY_DEF_ID: "1fBqHRNzpdAWTFm8JiM0gB",
+            BG: "/images/CET_result_200612.svg",
+            BGW: 480,
+            BGH: 530,
             NAME: "XM",
             FIELD_TYPE: 1,
-            WIDTH: 170.1,
-            HEIGHT: 19.8,
-            ALIGN: 0,
-            FSIZE: 13.5,
+            WIDTH: 272,
+            FSIZE: 16,
             WEIGHT: 0,
             TITLE: "姓　　名",
-            X: 98.6,
-            Y: 163.6,
+            X: 95,
+            Y: 26,
           },
           {
-            NAME: "SFZ",
+            NAME: "KS_SFZ",
             FIELD_TYPE: 2,
-            WIDTH: 255.1,
-            HEIGHT: 13.6,
-            ALIGN: 0,
-            FSIZE: 14.5,
+            WIDTH: 272,
+            FSIZE: 16,
             WEIGHT: 0,
-            TITLE: "身份证号",
-            X: 98.6,
-            Y: 228.9,
+            TITLE: "证件号码",
+            X: 95,
+            Y: 68,
           },
           {
-            NAME: "XX",
-            WIDTH: 255.1,
-            HEIGHT: 13.6,
-            ALIGN: 0,
-            FSIZE: 13.5,
+            NAME: "KS_SSXXMC",
+            WIDTH: 272,
+            FSIZE: 16,
             WEIGHT: 0,
             TITLE: "学　　校",
-            X: 98.6,
-            Y: 185.4,
-          },
-          {
-            NAME: "YX",
-            WIDTH: 255.1,
-            HEIGHT: 13.6,
-            ALIGN: 0,
-            FSIZE: 13.5,
-            WEIGHT: 0,
-            TITLE: "院　　系",
-            X: 98.6,
-            Y: 207.5,
+            X: 95,
+            Y: 110,
           },
           {
             NAME: "ZKZH",
-            WIDTH: 99.2,
-            HEIGHT: 13.6,
-            ALIGN: 0,
-            FSIZE: 12,
+            FIELD_TYPE: 3,
+            WIDTH: 360,
+            FSIZE: 16,
             WEIGHT: 0,
             TITLE: "准考证号",
-            X: 87.2,
-            Y: 289.3,
+            X: 95,
+            Y: 173,
           },
           {
             NAME: "SCORE",
-            WIDTH: 39.7,
-            HEIGHT: 13.6,
-            ALIGN: 1,
-            FSIZE: 14,
+            WIDTH: 260,
+            FSIZE: 16,
             WEIGHT: 1,
+            COLOR: "#FF0000",
             TITLE: "总　　分",
-            X: 193.5,
-            Y: 313.8,
+            X: 95,
+            Y: 214,
           },
           {
             NAME: "SCO_LC",
-            WIDTH: 39.7,
-            HEIGHT: 13.6,
-            ALIGN: 1,
-            FSIZE: 14,
-            WEIGHT: 0,
-            TITLE: "　　　　听力(35%)",
-            X: 235.2,
-            Y: 313.8,
+            WIDTH: 260,
+            FSIZE: 16,
+            WEIGHT: 1,
+            COLOR: "#19407A",
+            TITLE: "　　　　听　　力",
+            X: 190,
+            Y: 257,
           },
           {
             NAME: "SCO_RD",
-            WIDTH: 39.7,
-            HEIGHT: 13.6,
-            ALIGN: 1,
-            FSIZE: 14,
-            WEIGHT: 0,
-            TITLE: "　　　　阅读(35%)",
-            X: 277.0,
-            Y: 313.8,
+            WIDTH: 260,
+            FSIZE: 16,
+            WEIGHT: 1,
+            COLOR: "#19407A",
+            TITLE: "　　　　阅　　读",
+            X: 190,
+            Y: 299,
+          },
+          {
+            NAME: "SCO_IT",
+            WIDTH: 260,
+            FSIZE: 16,
+            WEIGHT: 1,
+            COLOR: "#19407A",
+            TITLE: "　　　　综　　合",
+            X: 190,
+            Y: 341,
           },
           {
             NAME: "SCO_WT",
-            WIDTH: 39.7,
-            HEIGHT: 13.6,
-            ALIGN: 1,
-            FSIZE: 14,
-            WEIGHT: 0,
-            TITLE: "　　　　写作和翻译(30%)",
-            X: 320.5,
-            Y: 313.8,
-          },
-          {
-            NAME: "_TIME",
-            WIDTH: 99.2,
-            HEIGHT: 13.6,
-            ALIGN: 0,
-            FSIZE: 12,
-            WEIGHT: 0,
-            TITLE: "考试时间",
-            X: 87.2,
-            Y: 311.4,
-          },
-          {
-            NAME: "KY_ZKZ",
-            WIDTH: 99.2,
-            HEIGHT: 13.6,
-            ALIGN: 0,
-            FSIZE: 12,
-            WEIGHT: 0,
-            TITLE: "口试准考证号",
-            X: 87.2,
-            Y: 364.3,
-          },
-          {
-            NAME: "KY_SCO",
-            WIDTH: 39.7,
-            HEIGHT: 13.6,
-            ALIGN: 1,
-            FSIZE: 12,
-            WEIGHT: 0,
-            TITLE: "口试成绩",
-            X: 235.2,
-            Y: 368.3,
-          },
-          {
-            NAME: "KY_TIME",
-            WIDTH: 99.2,
-            HEIGHT: 13.6,
-            ALIGN: 0,
-            FSIZE: 12,
-            WEIGHT: 0,
-            TITLE: "口试考试时间",
-            X: 87.2,
-            Y: 385.7,
-          },
-          {
-            NAME: "ZSBH",
-            FIELD_TYPE: 5,
-            WIDTH: 150,
-            HEIGHT: 13.6,
-            ALIGN: 0,
-            FSIZE: 13,
+            WIDTH: 260,
+            FSIZE: 16,
             WEIGHT: 1,
-            TITLE: "成绩报告单编号",
-            X: 124.1,
-            Y: 413.0,
+            COLOR: "#19407A",
+            TITLE: "　　　　写作和翻译",
+            X: 190,
+            Y: 383,
           },
           {
-            NAME: "_QR",
-            WIDTH: 70.9,
-            HEIGHT: 70.9,
-            ALIGN: 0,
-            FSIZE: 12,
-            WEIGHT: -1,
-            TITLE: "二维码",
-            X: 33.4,
-            Y: 472.0,
+            NAME: "_YEAR",
+            FIELD_TYPE: 8,
+            WIDTH: 360,
+            FSIZE: 16,
+            WEIGHT: 0,
+            TITLE: "考试年份",
+            X: 95,
+            Y: 424,
+          },
+          {
+            NAME: "_MONTH",
+            FIELD_TYPE: 9,
+            WIDTH: 21,
+            ALIGN: 1,
+            FSIZE: 16,
+            WEIGHT: 0,
+            TITLE: "考试月份",
+            X: 148,
+            Y: 424,
+          },
+          {
+            NAME: "ID",
+            FIELD_TYPE: 5,
+            WIDTH: 260,
+            FSIZE: 16,
+            WEIGHT: 0,
+            TITLE: "成绩报告单编号",
+            X: 142,
+            Y: 487,
           },
           {
             NAME: "BMH",
             FIELD_TYPE: 12,
-            WIDTH: 0,
-            HEIGHT: 0,
-            ALIGN: 0,
-            FSIZE: 12,
+            WIDTH: 360,
+            FSIZE: 16,
             WEIGHT: -1,
-            TITLE: "报名号",
-          },
-          {
-            NAME: "PK",
-            FIELD_TYPE: 3,
-            WIDTH: 0,
-            HEIGHT: 0,
-            ALIGN: 0,
-            FSIZE: 12,
-            WEIGHT: -1,
-            TITLE: "准考证号",
-          },
-          {
-            NAME: "BSSJ",
-            WIDTH: 0,
-            HEIGHT: 0,
-            ALIGN: 0,
-            FSIZE: 12,
-            WEIGHT: -1,
-            TITLE: "考试时间(延考)",
-          },
-          {
-            NAME: "_CODE",
-            WIDTH: 150,
-            HEIGHT: 13.6,
-            ALIGN: 0,
-            FSIZE: 10,
-            WEIGHT: 0,
-            TITLE: "校 验 码",
-            X: 70.2,
-            Y: 544.0,
-          },
-          {
-            NAME: "TLMK",
-            WIDTH: 221.1,
-            HEIGHT: 34,
-            ALIGN: 0,
-            FSIZE: 12,
-            WEIGHT: 0,
-            TITLE: "听力残疾",
-            X: 43.3,
-            Y: 432.3,
+            TITLE: "报 名 号",
           },
           {
             NAME: "_PHOTO",
             FIELD_TYPE: 6,
-            WIDTH: 85,
-            HEIGHT: 113.4,
-            ALIGN: 0,
-            FSIZE: 12,
-            WEIGHT: -1,
-            TITLE: "照片",
-            X: 277.1,
-            Y: 70.9,
+            WIDTH: 90,
+            HEIGHT: 120,
+            FSIZE: 16,
+            WEIGHT: 0,
+            TITLE: "照　　片",
+            X: 373,
+            Y: 20,
           },
         ],
         code: 0,
@@ -9783,9 +9684,6 @@ serv.queryCetResultListMobile = function () {
   ) {
     return false;
   }
-  if (!serv.checkNonSfz()) {
-    return false;
-  }
   //获取参数
   var subject = $("#subject").val();
   var xm = $("#xm").val();
@@ -9799,111 +9697,192 @@ serv.queryCetResultListMobile = function () {
   var loadIndex = layer.load(0, {
     shade: 0.1,
   });
-  $ajax("post", url, params, true, function (result) {
-    layer.close(loadIndex);
-    if (!result) {
-      layer.msg("获取数据错误！");
+  layer.close(loadIndex);
+  let result = null;
+  // if (subject === "CET4") {
+  //   result = {
+  //     code: 0,
+  //     data: {
+  //       xm: "孙静",
+  //       sfz: "411525200102036943",
+  //       list: [
+  //         {
+  //           xm: "孙静",
+  //           sfz: "411525200102036943",
+  //           xx: "北京化工大学",
+  //           zkzh: "110472222102618",
+  //           score: "436",
+  //           ky: "--",
+  //           zsbh: "222111047000576",
+  //           subject: "CET4",
+  //           exam_id: "3P2YG3KF57Uru0AGQVrM7C",
+  //           exam: "2022年下半年加考（3月）",
+  //           tab: "CET4_202303",
+  //           token:
+  //             "69a50892a78d2464a5c0a9eb17ffe30a7390f5554f172204b9f0ca71cc1aef100ba948cf6f9b99bdabd45b1030e5c46e8d9a6c19097d8d0e4f48e8c459d84acb9fe5dc60cda73028fe10a58aa4631cf1c7295e030790e7c4a4611f8937f5ec359efa393d02f85321d7296a7e015eac7f7bbf05560e7e3b61ffe681dd3c310e45",
+  //           tid: "3P2YG3KF57Uru0AGQVrM7C|110472222102618",
+  //           bkjb_code: "CET4",
+  //           is_down: 1,
+  //         },
+  //         {
+  //           xm: "孙静",
+  //           sfz: "411525200102036943",
+  //           xx: "北京化工大学",
+  //           zkzh: "110472202114122",
+  //           score: "511",
+  //           ky: "--",
+  //           zsbh: "202111047001393",
+  //           subject: "CET4",
+  //           exam_id: "2UmxXFNEt4dWzru04oLXLnO",
+  //           exam: "2020年下半年",
+  //           tab: "CET4_202012",
+  //           token:
+  //             "51fe9327e41040590753c89bbb179c62ccba3914e2a4680045743d1c0b517d1a943fe588f153e8576e30471bdef92847d73a387d3d1047b2efc2049955380b5832043de60f2edc9894721b8d95648fd8a7f9d9a860bbe2c76f0b9ebc6543e0bdd34a718626d69199724998371124b3cf8438766d7cbfeb6ef8bd2b8246ddc785",
+  //           tid: "2UmxXFNEt4dWzru04oLXLnO|110472202114122",
+  //           bkjb_code: "CET4",
+  //           is_down: 0,
+  //         },
+  //       ],
+  //       total: 2,
+  //     },
+  //     took: 4,
+  //     msg: "OK",
+  //   };
+  // } 
+  if (subject === "CET6") {
+    result = {
+      code: 0,
+      data: {
+        xm: "张芳",
+        sfz: "142603198710242022",
+        list: [
+          {
+            xm: "张芳",
+            çƒ: "142603198710242022",
+            xx: "山西师范大学",
+            zkzh: "110470711209308",
+            score: "473",
+            ky: "--",
+            zsbh: "211071047002985",
+            subject: "CET6",
+            exam_id: "2UmxXFNEt4dWzru04oLXLnO",
+            exam: "2007年下半年",
+            tab: "CET6_200712",
+            token:
+              "33bc29310d4619655bc31da9e558eb692bc20d7305dae08458204079666208c9b1e9cab7bc40698bf03f640117677cc2f86c30eaaaf86980d10fbd187f615fcfd013669083e5b5b5195488bf641b85609147a9f83d227ee0df5adf512163977acfb5256ab53420b1671af0c741c7ac9264f415dfd724764527a20b309d3af516",
+            tid: "1J6evWAA50poC9Bycsgl7S|110472211209308",
+            bkjb_code: "CET6",
+            is_down: 0,
+          },
+        ],
+        total: 1,
+      },
+      took: 4,
+      msg: "OK",
+    };
+  }
+  if (!result) {
+    layer.msg("您所提供的个人信息有误或成绩不存在，请核实后再进行查询。");
+    return;
+  }
+  if (result.code) {
+    //如果为未登录，则跳转到登录页
+    if (result.code == 401) {
+      goLogin();
       return;
     }
-    if (result.code) {
-      //如果为未登录，则跳转到登录页
-      if (result.code == 401) {
-        goLogin();
-        return;
-      }
-      layer.msg(result.message || result.msg);
-      return;
-    }
-    var showFields = rule_list[subject];
-    var achievementTbodyMobile = $("#achievement-tbody-mobile");
-    achievementTbodyMobile.html("");
-    var _km, _zh, _kmtitle, _li, _ul, _exam, _lititle, _xi, _hi, _cz, _td, _tda;
+    layer.msg(result.message || result.msg);
+    return;
+  }
+  var showFields = rule_list[subject];
+  var achievementTbodyMobile = $("#achievement-tbody-mobile");
+  achievementTbodyMobile.html("");
+  var _km, _zh, _kmtitle, _li, _ul, _exam, _lititle, _xi, _hi, _cz, _td, _tda;
 
-    var data = result.data;
-    $("#tit-xm").html(data.xm);
-    $("#tit-sfz").html(data.sfz);
-    $("#achievement-sn").html($("#subject").find("option:selected").text());
-    $.each(data.list, function (index, bean) {
-      _ul = $(
-        "<ul class='table-small txtUl' style='padding-bottom: 2vmin;'></ul>"
+  var data = result.data;
+  $("#tit-xm").html(data.xm);
+  $("#tit-sfz").html(data.sfz);
+  $("#achievement-sn").html($("#subject").find("option:selected").text());
+  $.each(data.list, function (index, bean) {
+    _ul = $(
+      "<ul class='table-small txtUl' style='padding-bottom: 2vmin;'></ul>"
+    );
+    $.each(showFields, function (code, name) {
+      if (code == "exam") {
+        _km = $("<li class='km'></li>");
+        _km.appendTo(_ul);
+        _kmtitle = $("<li class='km-title'>" + bean[code] + "</li>");
+        _kmtitle.appendTo(_km);
+        _xi = $("<i>1</i>");
+        _xi.appendTo(_km);
+        _hi = $("<li class='title-min'></li>");
+        _hi.appendTo(_kmtitle);
+        _exam = $("<span class='exam-title-min'>" + "</span>");
+        _exam.appendTo(_hi);
+      } else {
+        var fieldVal2 = bean[code] ? bean[code] : "--";
+        _li = $(
+          "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
+            name +
+            "</span><span class='right-t'>" +
+            fieldVal2 +
+            "</span></li></ol>"
+        );
+        _li.appendTo(_ul);
+      }
+    });
+    bean.type = 1;
+    _cz = $("<li class='buttonArea'></li>");
+    _tda = $("<a class='button-secondary-tinner'>查看详情</a>");
+    _tda.click(function () {
+      serv.pdfData(bean);
+    });
+    _tda.appendTo(_cz);
+    var down = serv.isDown(bean);
+    if (down) {
+      var tname = serv.getTypeName(bean);
+      var _tda = $(
+        "<a href=" +
+          down +
+          " class='button-main-tinner'>下载" +
+          (tname == "合格证书" ? "证书" : "成绩单") +
+          "</a>"
       );
-      $.each(showFields, function (code, name) {
-        if (code == "exam") {
-          _km = $("<li class='km'></li>");
-          _km.appendTo(_ul);
-          _kmtitle = $("<li class='km-title'>" + bean[code] + "</li>");
-          _kmtitle.appendTo(_km);
-          _xi = $("<i>1</i>");
-          _xi.appendTo(_km);
-          _hi = $("<li class='title-min'></li>");
-          _hi.appendTo(_kmtitle);
-          _exam = $("<span class='exam-title-min'>" + "</span>");
-          _exam.appendTo(_hi);
-        } else {
-          var fieldVal2 = bean[code] ? bean[code] : "--";
-          _li = $(
-            "<ol class='toggle'><li class='stext'><span class='lift-t-sec'>" +
-              name +
-              "</span><span class='right-t'>" +
-              fieldVal2 +
-              "</span></li></ol>"
-          );
-          _li.appendTo(_ul);
-        }
-      });
-      bean.type = 1;
-      _cz = $("<li class='buttonArea'></li>");
-      _tda = $("<a class='button-secondary-tinner'>查看详情</a>");
-      _tda.click(function () {
-        serv.pdfData(bean);
+      _tda.mouseup(function () {
+        _hmt.push(["_trackEvent", "ecert", "down", subject + "-d", 1]);
       });
       _tda.appendTo(_cz);
-      var down = serv.isDown(bean);
-      if (down) {
-        var tname = serv.getTypeName(bean);
-        var _tda = $(
-          "<a href=" +
-            down +
-            " class='button-main-tinner'>下载" +
-            (tname == "合格证书" ? "证书" : "成绩单") +
-            "</a>"
-        );
-        _tda.mouseup(function () {
-          _hmt.push(["_trackEvent", "ecert", "down", subject + "-d", 1]);
-        });
-        _tda.appendTo(_cz);
-      }
+    }
 
-      _td = $("<ol class='toggle'></ol>");
-      _cz.appendTo(_td);
-      _td.appendTo(_ul);
+    _td = $("<ol class='toggle'></ol>");
+    _cz.appendTo(_td);
+    _td.appendTo(_ul);
 
-      _ul.appendTo(achievementTbodyMobile);
-    });
-    $(".achievement").show();
-    $(".condition").hide();
-    $(".schrep").hide();
-    $(".condition-right").hide();
+    _ul.appendTo(achievementTbodyMobile);
+  });
+  $(".achievement").show();
+  $(".condition").hide();
+  $(".schrep").hide();
+  $(".condition-right").hide();
 
-    $(".txtUl").eq(0).children(".toggle").show();
-    $(".txtUl").eq(0).children(".km").children("i").css({
-      transform: "rotate(135deg)",
-    });
-    $(".txtUl").eq(0).children(".km").children("i").text(2);
-    $(".km").on("click", function () {
-      $(this).siblings().slideToggle("fast");
-      if ($(this).children("i").text() == 1) {
-        $(this).children("i").css({
-          transform: "rotate(135deg)",
-        });
-        $(this).children("i").text(2);
-      } else {
-        $(this).children("i").css({
-          transform: "rotate(-45deg)",
-        });
-        $(this).children("i").text(1);
-      }
-    });
+  $(".txtUl").eq(0).children(".toggle").show();
+  $(".txtUl").eq(0).children(".km").children("i").css({
+    transform: "rotate(135deg)",
+  });
+  $(".txtUl").eq(0).children(".km").children("i").text(2);
+  $(".km").on("click", function () {
+    $(this).siblings().slideToggle("fast");
+    if ($(this).children("i").text() == 1) {
+      $(this).children("i").css({
+        transform: "rotate(135deg)",
+      });
+      $(this).children("i").text(2);
+    } else {
+      $(this).children("i").css({
+        transform: "rotate(-45deg)",
+      });
+      $(this).children("i").text(1);
+    }
   });
   return false;
 };
