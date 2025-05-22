@@ -33,11 +33,11 @@ serv.queryCetResultList = function () {
     result = {
       code: 0,
       data: {
-        xm: "李浩鹏",
+        xm: "张三",
         sfz: "411402199609208577",
         list: [
           {
-            xm: "李浩鹏",
+            xm: "张三",
             sfz: "411402199609208577",
             xx: "江汉大学",
             zkzh: "420200203108026",
@@ -64,11 +64,11 @@ serv.queryCetResultList = function () {
     result = {
       code: 0,
       data: {
-        xm: "李浩鹏",
+        xm: "张三",
         sfz: "411402199609208577",
         list: [
           {
-            xm: "李浩鹏",
+            xm: "张三",
             sfz: "411402199609208577",
             xx: "徐州医科大学",
             zkzh: "323031242209904",
@@ -204,11 +204,11 @@ serv.queryCetResultListMobile = function () {
     result = {
       code: 0,
       data: {
-        xm: "李浩鹏",
+        xm: "张三",
         sfz: "411402199609208577",
         list: [
           {
-            xm: "李浩鹏",
+            xm: "张三",
             sfz: "411402199609208577",
             xx: "江汉大学",
             zkzh: "420200203108026",
@@ -236,11 +236,11 @@ serv.queryCetResultListMobile = function () {
     result = {
       code: 0,
       data: {
-        xm: "李浩鹏",
+        xm: "张三",
         sfz: "411402199609208577",
         list: [
           {
-            xm: "李浩鹏",
+            xm: "张三",
             sfz: "411402199609208577",
             xx: "徐州医科大学",
             zkzh: "323031242209904",
@@ -595,7 +595,7 @@ serv.pdfData = function (par) {
           SCO_WT: "110",
           KY_TIME: "--",
           _TIME: "2024年12月",
-          XM: "李浩鹏",
+          XM: "张三",
           ZKZH: "323031242209904",
           ZSBH: "242232303005503",
           KY_ZKZ: "--",
@@ -858,7 +858,7 @@ serv.pdfData = function (par) {
           SCO_WT: "74",
           KY_TIME: "--",
           _TIME: "2023年12月",
-          XM: "李浩鹏",
+          XM: "张三",
           ZKZH: "323031232201625",
           ZSBH: "232232303005228",
           KY_ZKZ: "--",
