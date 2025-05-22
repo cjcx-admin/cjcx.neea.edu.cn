@@ -395,7 +395,7 @@ serv.pdfData = function (par) {
         KY_TIME: "--",
         XM: "张三",
         ZKZH: "420202031080261",
-        KS_SSXXMC: "北京技术学院",
+        KS_SSXXMC: "江汉大学",
         KY_ZKZ: "--",
         _PHOTO:
           "bfcc142bdd43df7d125e2a0fe70a1c0daf49109dffbb7d9531ace44f1221fc65e22b0e3e4c9ea8c57abbe8cce2b318b35a7784998b6c18134e1bc1cbbdbaafae",
