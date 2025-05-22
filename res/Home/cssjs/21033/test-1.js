@@ -393,9 +393,9 @@ serv.pdfData = function (par) {
         KS_SFZ: "342423199910120679",
         SCO_WT: "132",
         KY_TIME: "--",
-        XM: "祝玉庭",
+        XM: "张三",
         ZKZH: "420202031080261",
-        KS_SSXXMC: "泰州职业技术学院",
+        KS_SSXXMC: "北京技术学院",
         KY_ZKZ: "--",
         _PHOTO:
           "bfcc142bdd43df7d125e2a0fe70a1c0daf49109dffbb7d9531ace44f1221fc65e22b0e3e4c9ea8c57abbe8cce2b318b35a7784998b6c18134e1bc1cbbdbaafae",
