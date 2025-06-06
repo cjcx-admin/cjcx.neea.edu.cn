@@ -2975,6 +2975,26 @@ serv.queryNtceResult = function (isCorp) {
         ],
         total: 11,
       },
+      ms: {
+        list: [
+          {
+            xm: "董思雨",
+            sfz: "410821200004070048",
+            km: "241-小学语文",
+            hg: "合格",
+            zkzh: "330325222002038",
+            sf: "浙江省",
+            qk: "不缺考",
+            subject: "NTCE_MS",
+            exam_id: "3Y7yRkFRKZ5trfdpWZrwJHU",
+            exam: "2025年上半年",
+            tab: "NTCE_MS_211",
+            tid: "3Y7yRkFRKZ5trfdpWZrwJHU|347|330325222002038",
+            yqyx: "--",
+          },
+        ],
+        total: 1,
+      },
     },
     msg: "OK",
   };
