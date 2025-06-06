@@ -2983,7 +2983,7 @@ serv.queryNtceResult = function (isCorp) {
             km: "241-小学语文",
             hg: "合格",
             zkzh: "330325222002038",
-            sf: "浙江省",
+            sf: "河南省",
             qk: "不缺考",
             subject: "NTCE_MS",
             exam_id: "3Y7yRkFRKZ5trfdpWZrwJHU",
