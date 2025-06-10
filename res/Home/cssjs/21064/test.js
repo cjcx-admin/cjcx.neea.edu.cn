@@ -2884,7 +2884,7 @@ serv.queryNtceResult = function (isCorp) {
           {
             xm: "王杨杨",
             sfz: "250502200407231027",
-            km: "241-小学语文",
+            km: "443-语文（高级中学）",
             hg: "合格",
             zkzh: "330325222002038",
             sf: "河南省",
