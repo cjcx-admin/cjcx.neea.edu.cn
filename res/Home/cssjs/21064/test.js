@@ -2837,7 +2837,7 @@ serv.queryNtceResult = function (isCorp) {
     code: 0,
     data: {
       xm: "王杨杨",
-      sfz: "250502200407231027",
+      sfz: "350502200407231027",
       bs: {
         list: [
           {
@@ -2847,7 +2847,7 @@ serv.queryNtceResult = function (isCorp) {
             yxq: "2027年6月30日",
             sf: "河南省",
             xm: "王杨杨",
-            sfz: "250502200407231027",
+            sfz: "350502200407231027",
             zkzh: "411325112000594",
             hg: "合格",
             yqyx: "--",
@@ -2859,7 +2859,7 @@ serv.queryNtceResult = function (isCorp) {
             yxq: "2027年6月30日",
             sf: "河南省",
             xm: "王杨杨",
-            sfz: "250502200407231027",
+            sfz: "350502200407231027",
             zkzh: "411325112000594",
             hg: "合格",
             yqyx: "--",
@@ -2871,7 +2871,7 @@ serv.queryNtceResult = function (isCorp) {
             yxq: "--",
             sf: "河南省",
             xm: "王杨杨",
-            sfz: "250502200407231027",
+            sfz: "350502200407231027",
             zkzh: "411324212014511",
             hg: "合格",
             yqyx: "--",
@@ -2883,7 +2883,7 @@ serv.queryNtceResult = function (isCorp) {
         list: [
           {
             xm: "王杨杨",
-            sfz: "250502200407231027",
+            sfz: "350502200407231027",
             km: "443-语文（高级中学）",
             hg: "合格",
             zkzh: "330325222002038",
