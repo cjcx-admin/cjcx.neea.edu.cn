@@ -2962,7 +2962,27 @@ serv.queryNtceResult = function (isCorp) {
                 }
             ],
             "total": 10
-        }
+        },
+        ms: {
+          list: [
+            {
+              xm: "黄铭涛",
+              sfz: "410821200004070048",
+              km: "346-物理（初级中学）",
+              hg: "合格",
+              zkzh: "330325222002038",
+              sf: "江西省",
+              qk: "不缺考",
+              subject: "NTCE_MS",
+              exam_id: "3Y7yRkFRKZ5trfdpWZrwJHU",
+              exam: "2025年上半年",
+              tab: "NTCE_MS_211",
+              tid: "3Y7yRkFRKZ5trfdpWZrwJHU|347|330325222002038",
+              yqyx: "--",
+            },
+          ],
+          total: 1,
+        },
     },
     "msg": "OK"
 }
