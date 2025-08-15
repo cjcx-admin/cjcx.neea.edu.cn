@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="color-scheme" content="light" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>统一用户中心 - 中国教育考试网</title>
+  </head>
+  <!-- <script src="./js/browserCheck.js"></script> -->
+  <link rel="stylesheet" href="./css/RdcUI.css" />
+  <link rel="stylesheet" href="./css/layui.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style_mobile.css" />
+  <!-- <script src="./js/RdcUI.js"></script>
+<script src="./js/Tools.js"></script> -->
+  <script src="./js/jquery-3.7.1.min.js"></script>
+  <script src="./js/layui.js"></script>
+  <!-- <script src="./js/Http.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/userInfoCheck.js" defer></script>
+<script src="./js/sm2_iam.js" defer></script> -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <body>
+    <!-- <div id="Lazy">
+        <div id="Lazy-loading">
+            <span id="Lazy-main"></span>
+            <div id="Lazy-box">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="lazy-content">加载中...</div>
+    </div> -->
+    <div
+      id="Header"
+      class="flex-row-nowrap justify-center items-center lazyAfter"
+    >
+      <div id="Header-def" class="flex-row-nowrap justify-between items-center">
+        <div class="logo-def flex-row-nowrap justify-start items-center">
+          <img
+            class="logo-tips cusp"
+            src="./img/logo_tips_2x.png"
+            alt=""
+            onclick="Tools.skip('https://www.neea.edu.cn','href')"
+          />
+          <span
+            class="logo-title line-l fontB strong cusp"
+            onclick="Tools.skipWithThird('/index.html','href')"
+            >统一用户中心</span
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      id="Content"
+      class="flex-row-nowrap justify-center items-start lazyAfter"
+    >
+      <div id="Content-inner-img"></div>
+      <div
+        id="Content-def"
+        class="flex-row-nowrap justify-center items-center"
+        style="margin: auto 0"
+      >
+        <div id="loginCont" class="table-def hover-def pW360 mW100p">
+          <!--考生登录-->
+          <form
+            name="formLogin"
+            id="formLogin"
+            onsubmit="return false;"
+            autocomplete="off"
+          >
+            <ul class="form-list padTop-def">
+              <li
+                class="flex-row-nowrap justify-between items-end padBottom-large"
+              >
+                <span class="fontA strong">考生登录</span>
+                <span class="fontC-D C003f7e cusp" onclick="goRegisterCont()"
+                  >没有账号?立即注册</span
+                >
+              </li>
+              <li class="form-comb">
+                <span class="comb-title fontC">证件号码</span>
+                <div class="formItem marBottom-small">
+                  <div class="comb-inner">
+                    <input
+                      type="text"
+                      class="comb-form fontC inner-all"
+                      name="username"
+                      placeholder="请输入注册时的证件号码"
+                      maxlength="18"
+                      errMsg="证件号码不能为空"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                  </div>
+                  <span class="comb-errMsg fontD Cbd271e"></span>
+                </div>
+              </li>
+              <li class="form-comb">
+                <span class="comb-title fontC">登录密码</span>
+                <div class="formItem marBottom-small">
+                  <div class="comb-inner">
+                    <input
+                      type="password"
+                      class="comb-form fontC inner-left"
+                      name="password"
+                      placeholder="请输入登录密码"
+                      errMsg="登录密码不能为空"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                    <div
+                      class="fontC inner-right flex-row-nowrap justify-end items-center cusp"
+                      onclick="showPwdEye(1)"
+                    >
+                      <svg
+                        t="1678707488027"
+                        class="icon pwdEye"
+                        viewBox="0 0 1024 1024"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        p-id="3118"
+                        width="24"
+                        height="24"
+                      >
+                        <path
+                          class="pwdEyeInner"
+                          d="M512 209.403241c-201.731514 0-374.009206 125.476783-443.808922 302.596759 69.798692 177.119977 242.077408 302.596759 443.808922 302.596759 201.933105 0 374.010229-125.476783 443.808922-302.596759C886.009206 334.880023 713.933105 209.403241 512 209.403241zM512 713.731514c-111.355157 0-201.731514-90.375334-201.731514-201.731514s90.375334-201.731514 201.731514-201.731514 201.731514 90.375334 201.731514 201.731514S623.355157 713.731514 512 713.731514zM512 390.961296c-66.772776 0-121.038704 54.265928-121.038704 121.038704s54.265928 121.038704 121.038704 121.038704 121.038704-54.265928 121.038704-121.038704S578.772776 390.961296 512 390.961296z"
+                          p-id="3119"
+                          fill="#cccccc"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <span class="comb-errMsg fontD Cbd271e"></span>
+                </div>
+              </li>
+              <li class="form-comb marBottom-smaller">
+                <span class="comb-title fontC">验证码</span>
+                <div class="formItem marBottom-small">
+                  <div class="comb-inner">
+                    <input
+                      type="text"
+                      class="comb-form fontC inner-left"
+                      name="graphicCode"
+                      maxlength="4"
+                      placeholder="不区分大小写"
+                      errMsg="验证码不正确"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                    <img
+                      src="https://www.neea.edu.cn/res/verify/8a37c7ecd299d93f00eeedceed672738.jpg"
+                      alt=""
+                      class="captchaImg fontF inner-right icon cusp"
+                    />
+                  </div>
+                  <span class="comb-errMsg fontD Cbd271e"></span>
+                </div>
+              </li>
+              <li class="flex-row-nowrap justify-end items-end marBottom-small">
+                <span
+                  class="fontC-D C003f7e cusp"
+                  onclick="Tools.skipWithThird('/forgetPw.html','href')"
+                  >忘记密码</span
+                >
+              </li>
+              <li
+                class="flex-column-nowrap justify-center items-center padTop-large padBottom-large"
+              >
+                <input
+                  type="button"
+                  value="登　录"
+                  class="button-main cusp"
+                  onclick="login()"
+                />
+              </li>
+            </ul>
+          </form>
+        </div>
+        <div id="registerCont" class="table-def hover-def pW510 mW100p disN">
+          <!-- 考生注册 -->
+          <form
+            name="formRegister"
+            id="formRegister"
+            onsubmit="return false;"
+            autocomplete="off"
+          >
+            <ul class="form-list padTop-def">
+              <li
+                class="flex-row-nowrap justify-between items-end padBottom-large"
+              >
+                <span class="fontA strong">考生注册</span>
+                <span
+                  class="fontC-D C003f7e cusp"
+                  style="text-align: right"
+                  onclick="goLoginCont()"
+                  >已有账号?点击登录</span
+                >
+              </li>
+              <li class="form-comb">
+                <span class="comb-title title-left fontC">考生类别</span>
+                <div class="formItem item-pSmall marBottom-small">
+                  <div class="comb-inner-select">
+                    <select
+                      name="candidateCate"
+                      class="comb-form fontC inner-all"
+                    ></select>
+                    <div
+                      class="select-control fontC inner-right flex-row-nowrap justify-end items-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="none"
+                        viewBox="0 0 16 16"
+                        class="icon downArrow"
+                        role="img"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.957 4.982a.75.75 0 0 1 1.06-.025l4.81 4.591a.25.25 0 0 0 .346 0l4.81-4.59a.75.75 0 0 1 1.035 1.085l-4.81 4.59a1.75 1.75 0 0 1-2.416 0l-4.81-4.59a.75.75 0 0 1-.025-1.06Z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="form-comb">
+                <span class="comb-title title-left fontC">证件类型</span>
+                <div class="formItem item-pSmall marBottom-small">
+                  <div class="comb-inner-select">
+                    <select
+                      name="idType"
+                      class="comb-form fontC inner-all"
+                    ></select>
+                    <div
+                      class="select-control fontC inner-right flex-row-nowrap justify-end items-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="none"
+                        viewBox="0 0 16 16"
+                        class="icon downArrow"
+                        role="img"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.957 4.982a.75.75 0 0 1 1.06-.025l4.81 4.591a.25.25 0 0 0 .346 0l4.81-4.59a.75.75 0 0 1 1.035 1.085l-4.81 4.59a1.75 1.75 0 0 1-2.416 0l-4.81-4.59a.75.75 0 0 1-.025-1.06Z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="form-comb">
+                <span class="comb-title title-left fontC">考生姓名</span>
+                <div class="formItem item-pSmall marBottom-small">
+                  <div id="formRegister-tips-idName" class="form-tips">
+                    <ul></ul>
+                  </div>
+                  <div class="comb-inner">
+                    <input
+                      type="text"
+                      class="comb-form fontC inner-all"
+                      name="idName"
+                      placeholder="请输入真实姓名"
+                      maxlength="80"
+                      errMsg="姓名格式不正确"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                  </div>
+                  <div
+                    class="flex-row-nowrap justify-between items-center"
+                    style="width: 100%"
+                  >
+                    <span class="comb-errMsg fontD Cbd271e"></span>
+                    <span class="fontD marTop-smaller" style="max-width: 65%"
+                      >部分生僻字和 · 支持<span
+                        class="fontD C003f7e cusp"
+                        onclick="Public.keySpz()"
+                      >
+                        快捷输入</span
+                      ></span
+                    >
+                  </div>
+                </div>
+              </li>
+              <li class="form-comb">
+                <span class="comb-title title-left fontC">证件号码</span>
+                <div class="formItem item-pSmall marBottom-small">
+                  <div id="formRegister-tips-idNum" class="form-tips">
+                    <ul></ul>
+                  </div>
+                  <div class="comb-inner">
+                    <input
+                      type="text"
+                      class="comb-form fontC inner-all"
+                      name="idNum"
+                      placeholder="请输入有效证件号码"
+                      maxlength="18"
+                      errMsg="证件号码格式不正确"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                  </div>
+                  <span class="comb-errMsg fontD Cbd271e"></span>
+                </div>
+              </li>
+              <li class="form-comb">
+                <span class="comb-title title-left fontC">手机号码</span>
+                <div class="formItem item-pSmall marBottom-small">
+                  <div class="comb-inner-select-input">
+                    <div class="inner-lift-select">
+                      <select
+                        name="phoneArea"
+                        class="comb-form fontC inner-all"
+                        disabled
+                      >
+                        <option value="+86" selected="selected">+86</option>
+                        <option value="+852">+852</option>
+                        <option value="+853">+853</option>
+                      </select>
+                      <div
+                        class="select-control fontC inner-right flex-row-nowrap justify-end items-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="none"
+                          viewBox="0 0 16 16"
+                          class="icon downArrow"
+                          role="img"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M1.957 4.982a.75.75 0 0 1 1.06-.025l4.81 4.591a.25.25 0 0 0 .346 0l4.81-4.59a.75.75 0 0 1 1.035 1.085l-4.81 4.59a1.75 1.75 0 0 1-2.416 0l-4.81-4.59a.75.75 0 0 1-.025-1.06Z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <input
+                      type="text"
+                      class="comb-form fontC inner-right-input"
+                      name="phoneNum"
+                      placeholder="请输入手机号码"
+                      maxlength="11"
+                      errMsg="手机号码格式不正确"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                  </div>
+                  <span class="comb-errMsg fontD Cbd271e"></span>
+                </div>
+              </li>
+              <li class="form-comb">
+                <span class="comb-title title-left fontC">验证码</span>
+                <div class="formItem item-pSmall marBottom-small">
+                  <div class="comb-inner">
+                    <input
+                      type="text"
+                      class="comb-form fontC inner-left"
+                      name="smsCode"
+                      maxlength="6"
+                      placeholder="请输入手机短信验证码"
+                      errMsg="短信验证码不正确"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                    <span
+                      class="fontC-D inner-right C003f7e cusp"
+                      onclick="Public.getSmsCode(this,'REGISTER',0)"
+                      >获取验证码</span
+                    >
+                  </div>
+                  <span class="comb-errMsg fontD Cbd271e"> </span>
+                </div>
+              </li>
+              <li class="form-comb">
+                <span class="comb-title title-left fontC">电子邮箱</span>
+                <div class="formItem item-pSmall marBottom-small">
+                  <div class="comb-inner">
+                    <input
+                      type="text"
+                      class="comb-form fontC inner-all"
+                      name="email"
+                      placeholder="请输入接收信息的电子邮箱"
+                      errMsg="电子邮箱格式不正确"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                  </div>
+                  <span class="comb-errMsg fontD Cbd271e"></span>
+                </div>
+              </li>
+              <li class="form-comb">
+                <span class="comb-title title-left fontC">登录密码</span>
+                <div class="formItem item-pSmall marBottom-small">
+                  <div id="formRegister-tips-password" class="form-tips">
+                    <ul></ul>
+                  </div>
+                  <div class="comb-inner">
+                    <input
+                      type="text"
+                      class="comb-form fontC inner-left"
+                      name="password"
+                      placeholder="请设置登录密码"
+                      maxlength="18"
+                      errMsg="登录密码格式不正确"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                    <div
+                      class="fontC inner-right flex-row-nowrap justify-end items-center cusp"
+                      onclick="showPwdEye(1)"
+                    >
+                      <svg
+                        t="1678707488027"
+                        class="icon pwdEye"
+                        viewBox="0 0 1024 1024"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        p-id="3118"
+                        width="24"
+                        height="24"
+                      >
+                        <path
+                          class="pwdEyeInner"
+                          d="M512 209.403241c-201.731514 0-374.009206 125.476783-443.808922 302.596759 69.798692 177.119977 242.077408 302.596759 443.808922 302.596759 201.933105 0 374.010229-125.476783 443.808922-302.596759C886.009206 334.880023 713.933105 209.403241 512 209.403241zM512 713.731514c-111.355157 0-201.731514-90.375334-201.731514-201.731514s90.375334-201.731514 201.731514-201.731514 201.731514 90.375334 201.731514 201.731514S623.355157 713.731514 512 713.731514zM512 390.961296c-66.772776 0-121.038704 54.265928-121.038704 121.038704s54.265928 121.038704 121.038704 121.038704 121.038704-54.265928 121.038704-121.038704S578.772776 390.961296 512 390.961296z"
+                          p-id="3119"
+                          fill="#cccccc"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <span class="comb-errMsg fontD Cbd271e"></span>
+                </div>
+              </li>
+              <li class="form-comb marBottom-smaller">
+                <span class="comb-title title-left fontC">确认密码</span>
+                <div class="formItem item-pSmall marBottom-small">
+                  <div class="comb-inner">
+                    <input
+                      type="text"
+                      class="comb-form fontC inner-all"
+                      name="rawPassword"
+                      readonly
+                      placeholder="请再次输入密码"
+                      maxlength="18"
+                      errMsg="两次输入密码不一致"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <div class="comb-errIcon flex-row-nowrap"></div>
+                  </div>
+                  <span class="comb-errMsg fontD Cbd271e"></span>
+                </div>
+              </li>
+              <li class="form-comb" style="margin: 0 !important">
+                <div class="formItem marBottom-small row-nowrap">
+                  <div
+                    class="comb-inner-checkbox"
+                    style="padding: 0 !important"
+                  >
+                    <div class="comb-checkbox">
+                      <input
+                        type="checkbox"
+                        id="formRegister-checkbox-agreement"
+                        class="cusp"
+                        name="agreeRegister"
+                      />
+                      <div class="checkbox-square"></div>
+                      <label
+                        class="C333333 cusp"
+                        for="formRegister-checkbox-agreement"
+                        >我已阅读并同意<a
+                          class="C003f7e strong"
+                          href="javascript:;"
+                          onclick="Public.showAgreement(1)"
+                          >《服务协议》</a
+                        >和<a
+                          class="C003f7e strong"
+                          href="javascript:;"
+                          onclick="Public.showAgreement(2)"
+                          >《隐私政策》</a
+                        ></label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="flex-column-nowrap justify-center items-center padTop-def padBottom-large borB"
+              >
+                <input
+                  type="button"
+                  value="立即注册"
+                  class="button-main pW100p mW100p cusp"
+                  onclick="registerSub()"
+                />
+              </li>
+              <li
+                class="flex-row-nowrap justify-center items-center fontC-D C003f7e padTop-large"
+              >
+                <span
+                  class="cusp"
+                  style="border-color: #003f7e"
+                  onclick="Public.appealTs('APPEAL_EXIST_ID')"
+                  >证件号码占用申诉</span
+                >
+                <span
+                  class="padRight-large marRight-large borR"
+                  style="border-color: #003f7e"
+                ></span>
+                <span
+                  class="cusp"
+                  style="border-color: #003f7e"
+                  onclick="Tools.skipWithThird('/forgetPw.html','href')"
+                  >已有账号重置密码</span
+                >
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      id="Footer"
+      class="flex-row-nowrap justify-center items-center lazyAfter"
+    >
+      <div id="Footer-def" class="flex-row-nowrap justify-center items-center">
+        <div class="institution-info">
+          <script
+            src="https://dcs.conac.cn/js/33/000/0000/40672553/CA330000000406725530004.js"
+            type="text/javascript"
+          ></script>
+        </div>
+        <div class="neea-info flex-column-nowrap justify-start items-start">
+          <span class="fontH C303d5d">主办单位：教育部教育考试院</span>
+          <div class="flex-row-nowrap justify-start items-center">
+            <div
+              class="flex-row-nowrap justify-start items-center cusp"
+              onclick="Tools.goICP()"
+            >
+              <span class="fontH C303d5d">京ICP备05064772号</span>
+              <span class="fontH C303d5d" id="recordIndex">-1</span>
+            </div>
+            <div
+              class="flex-row-nowrap justify-start items-center cusp"
+              onclick="Tools.goPublicSecurity()"
+            >
+              <img
+                class="publicSecurity"
+                src="./img/icon_public_security.png"
+              />
+              <span class="fontH C303d5d">京公网安备 11040202430017号</span>
+            </div>
+            <script>
+              document.getElementById("recordIndex").innerHTML =
+                document.domain.indexOf("neea.edu.cn") >= 0 ? "-1" : "-2";
+            </script>
+          </div>
+          <span class="mDisN fontH C303d5d"
+            >请使用Edge、Chrome、Firefox、360(极速)等主流浏览器</span
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="./tea/layui/layui.js"></script>
+<script text="javascript">
+  function login() {
+    var dev = layui.device();
+    if (dev.mobile) {
+      window.location.href = "./xhtml/folder/21033/2226/653-1.htm";
+    } else {
+      window.location.href = "./html1/folder/21033/2226/653-1.htm";
+    }
+  }
+
+  function showPwdEye() {
+    if ($('input[name="password"]').attr("type") === "text") {
+      $('input[name="password"]').attr("type", "password");
+    } else {
+      $('input[name="password"]').attr("type", "text");
+    }
+  }
+</script>
